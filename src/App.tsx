@@ -1,11 +1,9 @@
 import React from 'react';
-import styles from './App.module.scss';
+import MainRouter from 'router/MainRouter';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <div className={styles.Children}></div>
-    </div>
+    <MainRouter />
   );
 }
 
