@@ -20,7 +20,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-        // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // For more Eslint options, reference here: https://eslint.org/docs/rules/
     // For more Eslint-Typesciprt plugin options, reference here: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
     // For more Eslint-React plugin options, reference here: https://github.com/yannickcr/eslint-plugin-react
@@ -30,29 +30,9 @@ module.exports = {
     "jsx-quotes": ["error", "prefer-single"],
     "quotes": ["error", "single"],
     "object-curly-spacing": ["error", "always"],
-    "indent": "off",
+    "indent": ["error", 4],
     "no-param-reassign": "error",
-    "prefer-const": "off",
-    "no-unused-vars": "off",
-    // "@typescript-eslint/indent": ["error", 2],    
-    // "@typescript-eslint/no-unused-vars": ["error", {
-    //   "vars": "all",
-    //   "args": "none",
-    //   "ignoreRestSiblings": false
-    // }],
-    // "@typescript-eslint/no-use-before-define": "off",
-    // "@typescript-eslint/no-var-requires": "warn",
-    // "@typescript-eslint/interface-name-prefix": ["error", "always"],
-    // "@typescript-eslint/array-type": ["error", {
-    //   default: 'array',
-    // }],
-    // "@typescript-eslint/explicit-member-accessibility": ["error", {
-    //   "accessibility": "explicit",
-    //   "overrides": { "constructors": "no-public" }
-    // }],
-    // "@typescript-eslint/no-empty-interface": ["error", {
-    //     "allowSingleExtends": true
-    // }],
-    // "@typescript-eslint/ban-ts-ignore": "off"    
+    "@typescript-eslint/indent": ["error", 4],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
   },
 };
