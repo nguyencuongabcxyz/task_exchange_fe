@@ -32,7 +32,7 @@ module.exports = {
     "object-curly-spacing": ["error", "always"],
     "indent": ["error", 4],
     "no-param-reassign": "error",
-    "@typescript-eslint/indent": ["error", 4],
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
 };

@@ -1,9 +1,16 @@
 import React from 'react';
-import MainRouter from 'router/MainRouter';
+import MainRouter from 'shared/router/MainRouter';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from 'shared/redux/store';
 
 function App() {
     return (
-        <MainRouter />
+        <Provider store={store}>
+            <Router>
+                <MainRouter />
+            </Router>
+        </Provider>
     );
 }
 
