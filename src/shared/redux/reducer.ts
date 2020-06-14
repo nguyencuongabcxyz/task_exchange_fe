@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { AuthState } from 'auth/redux/reducer';
 import authReducer from 'auth/redux/reducer';
 
-interface RootState {
+export interface RootState {
     auth: AuthState,
 }
 
