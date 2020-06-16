@@ -7,8 +7,8 @@ interface LoginProps {
     isLoggingIn: boolean,
     id: string,
     userName: string,
-    loginRequest: (userName: string) => void;
-    loginSuccess: ({}) => void;
+    loginRequest: (payload: {userName: string}) => void;
+    loginSuccess: (payload: { id: string, userName: string }) => void;
 }
 
 class Login extends React.Component<LoginProps> {
