@@ -1,12 +1,13 @@
-const loginAPI = (accountInfo: {userName: string, 
-    password: string}): Promise<{userName: string, token: string}> => {
-    const result: {userName: string, token: string} = {
-        userName: accountInfo.userName,
+const loginAPI = (userName: string, password: string): Promise<{id: string, userName: string, token: string}> => {
+    const result: {id: string, userName: string, token: string} = {
+        id: 'userid01',
+        userName: userName,
         token: 'erouersfjsaldfuoueorjeljljadfo739473dj',
     }
+    const error = new Error('Loi roi!');
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(result);
+            reject(error);
         }, 300)
     })
 }

@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import Action from 'shared/interfaces/Action';
 
 export interface AuthState {
     isLoggingIn: boolean;
@@ -14,20 +15,29 @@ export const initialAuthState: AuthState = {
     errorMessage: '',
 }
 
+/**
+ * Export interfaces for payload of actions.
+ */
+export type LoginRequestAction = Action<{ userName: string, password: string }>;
+export type LoginSuccessAction = Action<{ id: string, userName: string }>;
+export type LoginFailAction = Action<{ errorMessage: string }>;
+
 const authSlice = createSlice({
     name: 'auth',
     initialState: initialAuthState,
     reducers: {
-        loginRequest(state: AuthState, action: PayloadAction<{userName: string}>) {
+        loginRequest(state: AuthState, action: LoginRequestAction) {
             state.isLoggingIn = true;
         },
-        loginSuccess(state: AuthState, action: PayloadAction<{id: string, userName: string}>) {
+        loginSuccess(state: AuthState, action: LoginSuccessAction) {
             const { id, userName } = action.payload;
+            state.isLoggingIn = false;
             state.id = id;
             state.userName = userName;
         },
-        loginFail(state: AuthState, action: PayloadAction<{errorMessage: string}>) {
+        loginFail(state: AuthState, action: LoginFailAction) {
             const { errorMessage } = action.payload;
+            state.isLoggingIn = false;
             state.errorMessage = errorMessage;
         },
     },
