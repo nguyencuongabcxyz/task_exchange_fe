@@ -4,6 +4,12 @@ import { connect } from 'react-redux';
 import { RootState } from 'shared/redux/reducer';
 import { loginRequest } from 'auth/redux/authSlice';
 
+// Material ui components
+import { Box, Container, Grid } from '@material-ui/core';
+
+//Images
+import mainIcon from 'assets/images/main_icon.svg';
+
 interface LoginProps {
     isLoggingIn: boolean,
     id: string,
@@ -15,12 +21,25 @@ class Login extends React.Component<LoginProps> {
     render() {
         const { id, userName, loginRequest } = this.props;
         return (
-            <div>
-                <h1>Login</h1>
-                <button onClick={() => {loginRequest('Cuong Nguyen', 'Abcxyz')}}>Login</button>
-                <h2>{id}</h2>
-                <h3>{userName}</h3>
-            </div>
+            <Container maxWidth='xl'>
+                <Grid container>
+                    <Grid item xs={6}>
+                        <img alt='main_icon' src={mainIcon} />
+                    </Grid>
+                    <Grid container item xs={6}>
+                        <Grid item>
+                            <Box>
+                                Sign In
+                            </Box>
+                        </Grid>
+                        <Grid item>
+                            <Box>
+                                Sign Up
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Container>
         );
     }
 }
