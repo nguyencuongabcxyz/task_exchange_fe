@@ -5,10 +5,14 @@ import { RootState } from 'shared/redux/reducer';
 import { loginRequest } from 'auth/redux/authSlice';
 
 // Material ui components
-import { Box, Container, Grid } from '@material-ui/core';
+import { Box, Grid, Button } from '@material-ui/core';
 
 //Images
 import mainIcon from 'assets/images/main_icon.svg';
+
+//Styles
+import 'shared/styles/mediaQueries.scss';
+import styles from './login.module.scss';
 
 interface LoginProps {
     isLoggingIn: boolean,
@@ -21,25 +25,31 @@ class Login extends React.Component<LoginProps> {
     render() {
         const { id, userName, loginRequest } = this.props;
         return (
-            <Container maxWidth='xl'>
-                <Grid container>
-                    <Grid item xs={6}>
+            <Box>
+                {/* Header section */}
+                <Grid className={`responsive-main-app-container ${styles.header}`} container>
+                    <Grid className={styles.imageWrapper} item xs={6}>
                         <img alt='main_icon' src={mainIcon} />
                     </Grid>
-                    <Grid container item xs={6}>
-                        <Grid item>
-                            <Box>
+                    <Grid 
+                        container 
+                        item 
+                        xs={6}
+                        justify='flex-end'
+                    >
+                        <Grid className={styles.headerButtonWrapper} item>
+                            <Box className={styles.headerButton}>
                                 Sign In
                             </Box>
                         </Grid>
-                        <Grid item>
-                            <Box>
+                        <Grid className={styles.headerButtonWrapper} item>
+                            <Box className={styles.headerButton}>
                                 Sign Up
                             </Box>
                         </Grid>
                     </Grid>
                 </Grid>
-            </Container>
+            </Box>
         );
     }
 }
